@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  line-height: 1.9;
+  background-image: linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator {
+  background: #47c0f0;
+  justify-content: center;
+  padding: 50px 0;
+  margin: 2rem auto;
+  border-radius: 40px;
+  box-shadow: 25px 25px 75px #47c0f0, -12px -12px 14px #2574b4 inset,
+    6px 6px 5px #2574b4 inset;
+  width: 450px;
+}
+
+.calculator__buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 12rem);
+  grid-template-rows: minmax(8rem, auto) repeat(4, 5rem);
+  justify-content: center;
+}
+
+.calculator__buttons > button {
+  box-shadow: 25px 25px 75px #660eda, -12px -12px 12px #06306e inset,
+    5px 5px 16px #06306e inset;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: rgba(52, 109, 163, 0.75);
+  margin: 5px;
+  color: #fff;
+}
+
+.calculator__buttons > .button-equal {
+  grid-column: span 2;
+}
+
+.calculator__buttons > .button-c {
+  background: #a12132 !important;
+  box-shadow: rgb(40 40 40) 25px 25px 75px, rgb(137 4 4) -12px -12px 12px inset,
+    rgb(221 54 54) 5px 5px 16px inset !important;
+}
+
+.calculator__buttons > button:hover {
+  background-color: rgb(50 49 49);
+  box-shadow: 25px 25px 75px #282828, -12px -12px 12px #5e5e5e inset,
+    5px 5px 16px #000 inset;
+}
+
+.calculator__buttons > button:focus {
+  margin: 6px;
+}
+
+.output {
+  width: 80%;
+  background-color: rgba(185, 93, 31, 0.75);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin: 2rem auto;
+  height: 60px;
+  color: #fff;
+  font-size: 24px;
+  text-align: right;
+}
+
+.result-output {
   color: white;
+  font-size: 2.5rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result {
+  color: rgb(72, 201, 40);
 }
